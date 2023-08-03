@@ -1,0 +1,5 @@
+项目地址: https://gitee.com/javakam/FileCleaner
+使用方法: java -jar xxx.jar
+
+FileCleaner.jar  用于清理Android项目的临时编译目录,如build classes target 等
+FileSizeCalculator.jar  用于查看目录中所有文件的大小,目前仅支持MB为单位,便于删除大文件

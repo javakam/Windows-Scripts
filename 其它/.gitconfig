@@ -1,0 +1,11 @@
+[user]
+	name = javakam
+	email = jooybao@foxmail.com
+[credential "https://gitee.com"]
+	provider = generic
+[credential "https://e.coding.net"]
+	provider = generic
+[http]
+	proxy = 127.0.0.1:7890
+[https]
+	proxy = 127.0.0.1:7890
