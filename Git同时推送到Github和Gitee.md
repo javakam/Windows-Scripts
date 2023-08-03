@@ -1,6 +1,11 @@
-https://www.6hu.cc/archives/45845.html
+https://blog.csdn.net/qq_40183053/article/details/106344702
+
+git remote set-url --add origin https://github.com/javakam/Windows-Scripts.git
 
 git remote -v
+
+删除远程地址           git remote rm origin
+更新为新远程仓库地址    git remote add origin 新远程仓库地址
 
 git config --global -e
 
