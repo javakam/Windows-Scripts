@@ -1,5 +1,7 @@
 2023年8月7日 17:07:28
 
+掘金地址: [https://juejin.cn/post/7260457485478723584](https://juejin.cn/post/7260457485478723584)
+
 Windows常用脚本放到了`Gitee`。项目地址👉[https://gitee.com/javakam/windows-script](https://gitee.com/javakam/windows-script)
 
 ### 常用脚本(Batchfile & VBScript)
