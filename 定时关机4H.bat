@@ -1,0 +1,1 @@
+Shutdown -s -t 14400
