@@ -1,1 +1,0 @@
-Shutdown -s -t 10800
