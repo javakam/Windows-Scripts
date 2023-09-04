@@ -235,7 +235,7 @@ ws.run "xxxxxx.bat /start",0
 ```
 ②把`vbs`脚本源文件或`快捷方式`放到
 
-`C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`
+`C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` (`Win+R`输入`shell:startup` 可快速打开)
 
 目录下, 开机后会自动执行。如下图所示:
 

@@ -11,4 +11,4 @@
 @REM echo 9小时(32400)
 @REM echo 10小时(36000)
 
-Shutdown -s -f -t 10800
+Shutdown -s -f -t 3
