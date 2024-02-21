@@ -20,7 +20,8 @@ start "" "C:\fastwork\JetBrains\IntelliJ IDEA 2023.1.5\bin\idea64.exe"
 ::start "" C:\fastwork\微信web开发者工具\微信开发者工具.exe
 
 echo Starting QQ...
-start "" "C:\Program Files (x86)\Tencent\QQ\Bin\QQScLauncher.exe"
+start "" "C:\Program Files\Tencent\QQNT\QQ.exe"
+::start "" "C:\Program Files (x86)\Tencent\QQ\Bin\QQScLauncher.exe"
 
 echo Starting WeChat...
 start "" "C:\Program Files\Tencent\WeChat\WeChat.exe"
