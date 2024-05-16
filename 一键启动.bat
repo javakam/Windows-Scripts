@@ -13,6 +13,8 @@ echo.-----------------------------------------------------------
 echo Starting idea64...
 start "" "C:\fastwork\JetBrains\IntelliJ IDEA 2023.1.5\bin\idea64.exe"
 
+timeout /t 0.1 /nobreak >nul
+
 ::echo Starting Android Studio...
 ::start "" C:\fastwork\android-studio\bin\studio64.exe
 
@@ -22,21 +24,27 @@ start "" "C:\fastwork\JetBrains\IntelliJ IDEA 2023.1.5\bin\idea64.exe"
 echo Starting QQ...
 start "" "C:\Program Files\Tencent\QQNT\QQ.exe"
 ::start "" "C:\Program Files (x86)\Tencent\QQ\Bin\QQScLauncher.exe"
+timeout /t 0.1 /nobreak >nul
 
 echo Starting WeChat...
 start "" "C:\Program Files\Tencent\WeChat\WeChat.exe"
+timeout /t 0.1 /nobreak >nul
 
 echo Starting 浏览器...
 start "" C:\Users\MaChangBao\AppData\Local\360ChromeX\Chrome\Application\360ChromeX.exe
+timeout /t 0.1 /nobreak >nul
 
 echo Starting 向日葵...
 start "" "C:\Program Files\Oray\SunLogin\SunloginClient\SunloginClient.exe"
+timeout /t 0.1 /nobreak >nul
 
 echo Starting 哔哩哔哩...
 start "" "C:\Program Files\bilibili\哔哩哔哩.exe"
+timeout /t 0.1 /nobreak >nul
 
-echo Starting PhpStudy...
-start "" "C:\fastwork\phpstudy_pro\COM\phpstudy_pro.exe"
+::echo Starting PhpStudy...
+::start "" "C:\fastwork\phpstudy_pro\COM\phpstudy_pro.exe"
+::timeout /t 0.1 /nobreak >nul
 
 :end
 echo 执行完成
