@@ -10,10 +10,9 @@ echo.Martin's Blog  https://javakam.github.io
 color 1f
 echo.-----------------------------------------------------------
 
-echo Starting idea64...
-start "" "C:\fastwork\JetBrains\IntelliJ IDEA 2023.1.5\bin\idea64.exe"
-
-timeout /t 0.1 /nobreak >nul
+::echo Starting idea64...
+::start "" "C:\fastwork\JetBrains\IntelliJ IDEA 2023.1.5\bin\idea64.exe"
+::timeout /t 0.1 /nobreak >nul
 
 ::echo Starting Android Studio...
 ::start "" C:\fastwork\android-studio\bin\studio64.exe
