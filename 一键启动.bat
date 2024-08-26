@@ -33,6 +33,9 @@ echo.-----------------------------------------------------------
 ::echo Starting idea64...
 ::start "" "C:\fastwork\JetBrains\IntelliJ IDEA 2023.1.5\bin\idea64.exe"
 
+echo Starting phpstorm64...
+start "" "C:\fastwork\JetBrains\PhpStorm 2024.2\bin\phpstorm64.exe"
+
 ::echo Starting Android Studio...
 ::start "" C:\fastwork\android-studio\bin\studio64.exe
 
