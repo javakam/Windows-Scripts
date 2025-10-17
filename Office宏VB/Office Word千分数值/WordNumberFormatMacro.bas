@@ -65,7 +65,16 @@ Sub ConvertSelectedTextToThousands()
                     
                     ' 只对整数部分大于等于4位的数字进行格式化
                     If Len(integerPart) >= 4 Then
-                        formattedNumber = FormatNumberWithCommas(CDbl(currentNumber))
+                        ' 判断是否为整数（没有小数部分或小数部分为0）
+                        Dim isIntegerValue As Boolean
+                        If decimalPart = "" Or decimalPart = ".0" Or decimalPart = ".00" Or decimalPart = ".000" Or decimalPart = ".0000" Or _
+                           decimalPart = ".00000" Or decimalPart = ".000000" Or decimalPart = ".0000000" Or decimalPart = ".00000000" Then
+                            isIntegerValue = True
+                        Else
+                            isIntegerValue = False
+                        End If
+                        
+                        formattedNumber = FormatNumberWithCommas(CDbl(currentNumber), isIntegerValue)
                         newText = newText & formattedNumber
                     Else
                         newText = newText & currentNumber
@@ -146,16 +155,31 @@ Private Function ShouldFormatNumber(originalText As String, numberStart As Long,
 End Function
 
 ' 使用VBA的Format函数为数字添加千位分隔符
-Private Function FormatNumberWithCommas(numberValue As Double) As String
-    FormatNumberWithCommas = Format(numberValue, "#,##0.##############################")
-    
-    ' 去除尾部多余的0和小数点
-    If InStr(FormatNumberWithCommas, ".") > 0 Then
-        Do While Right(FormatNumberWithCommas, 1) = "0"
-            FormatNumberWithCommas = Left(FormatNumberWithCommas, Len(FormatNumberWithCommas) - 1)
-        Loop
-        If Right(FormatNumberWithCommas, 1) = "." Then
-            FormatNumberWithCommas = Left(FormatNumberWithCommas, Len(FormatNumberWithCommas) - 1)
+Private Function FormatNumberWithCommas(numberValue As Double, isInteger As Boolean) As String
+    If isInteger Then
+        ' 对于整数，格式化为带千位分隔符和两位小数的形式
+        FormatNumberWithCommas = Format(numberValue, "#,##0.00")
+    Else
+        ' 对于小数，保留原有小数位
+        FormatNumberWithCommas = Format(numberValue, "#,##0.##############################")
+        
+        ' 去除尾部多余的0和小数点（但保留至少两位小数）
+        If InStr(FormatNumberWithCommas, ".") > 0 Then
+            Dim decimalPart As String
+            decimalPart = Right(FormatNumberWithCommas, Len(FormatNumberWithCommas) - InStr(FormatNumberWithCommas, "."))
+            
+            ' 如果是原始的整数（以.00结尾），保持两位小数
+            If Len(decimalPart) >= 2 And Left(decimalPart, 2) = "00" And Len(decimalPart) = 2 Then
+                ' 保持两位小数
+            Else
+                ' 去除多余尾部的0
+                Do While Right(FormatNumberWithCommas, 1) = "0"
+                    FormatNumberWithCommas = Left(FormatNumberWithCommas, Len(FormatNumberWithCommas) - 1)
+                Loop
+                If Right(FormatNumberWithCommas, 1) = "." Then
+                    FormatNumberWithCommas = Left(FormatNumberWithCommas, Len(FormatNumberWithCommas) - 1)
+                End If
+            End If
         End If
     End If
 End Function
